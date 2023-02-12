@@ -16,6 +16,7 @@ const polls: Array<IPoll> = [
       { id: 3, optionId: 2 },
       { id: 4, optionId: 3 },
     ],
+    expiresAt: new Date('2023-02-12 18:10:00'),
   },
 ];
 
