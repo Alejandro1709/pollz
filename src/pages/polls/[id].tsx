@@ -3,6 +3,7 @@ import Layout from '@/components/Layout';
 import polls from '@/data/polls';
 import Notice from '@/components/Notice';
 import Container from '@/components/Container';
+import { isDateExpired } from '@/utils/dates';
 
 function PollPage() {
   const router = useRouter();
@@ -11,8 +12,8 @@ function PollPage() {
 
   const foundPoll = polls.find(poll => poll.id === id);
 
-  if (!foundPoll) {
-    return <Notice title='Poll' message='Poll not found' />;
+  if (!foundPoll || isDateExpired(foundPoll.expiresAt)) {
+    return <Notice title='Poll' message='Poll not found / expired' />;
   }
 
   return (
@@ -33,7 +34,7 @@ function PollPage() {
           ))}
         </ul>
         <span className='text-blue-500 underline'>http://localhost:3000/polls/{foundPoll.id}</span>
-        <div className='bg-blue-100 p-1 border rounded select-none'>This poll will expire in {}</div>
+        <div className='bg-blue-100 p-1 border rounded select-none'>This poll will expire in 5 minutes</div>
       </Container>
     </Layout>
   );

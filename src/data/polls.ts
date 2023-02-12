@@ -18,6 +18,29 @@ const polls: Array<IPoll> = [
     ],
     expiresAt: new Date('2023-02-12 18:10:00'),
   },
+  {
+    id: 'jupiterwaffles34',
+    title: 'What is your favorite food?',
+    options: [
+      {
+        id: 1,
+        name: 'Pizza',
+        votes: 0,
+      },
+      {
+        id: 2,
+        name: 'Burger',
+        votes: 0,
+      },
+    ],
+    votes: [
+      { id: 1, optionId: 1 },
+      { id: 2, optionId: 1 },
+      { id: 3, optionId: 2 },
+      { id: 4, optionId: 2 },
+    ],
+    expiresAt: new Date('2023-02-12 18:40:00'),
+  },
 ];
 
 export default polls;
