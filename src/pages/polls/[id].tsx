@@ -1,7 +1,7 @@
-import Layout from '@/components/Layout';
 import { useRouter } from 'next/router';
+import Layout from '@/components/Layout';
 import polls from '@/data/polls';
-import Link from 'next/link';
+import Notice from '@/components/Notice';
 
 function PollPage() {
   const router = useRouter();
@@ -11,24 +11,7 @@ function PollPage() {
   const foundPoll = polls.find(poll => poll.id === id);
 
   if (!foundPoll) {
-    return (
-      <Layout title='Poll'>
-        <section className='flex flex-col gap-4 md:mx-16 mx-4'>
-          <article className='p-4 border mt-6 rounded-md'>
-            <div className='flex flex-col items-center gap-2'>
-              <h1 className='text-2xl font-medium text-center'>Poll not found</h1>
-              <div>
-                Shall we go back{' '}
-                <Link className='text-blue-500 underline hover:text-blue-600' href='/'>
-                  home
-                </Link>
-                ?
-              </div>
-            </div>
-          </article>
-        </section>
-      </Layout>
-    );
+    return <Notice title='Poll' message='Poll not found' />;
   }
 
   return (
