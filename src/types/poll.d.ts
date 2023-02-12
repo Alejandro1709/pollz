@@ -5,6 +5,7 @@ export default interface IPoll {
   votes?: IPollVote[];
   createdAt?: Date;
   updatedAt?: Date;
+  expiresAt: Date;
 }
 
 export interface IPollOption {
