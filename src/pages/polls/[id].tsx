@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router';
+import { isDateExpired } from '@/utils/dates';
 import Layout from '@/components/Layout';
 import polls from '@/data/polls';
 import Notice from '@/components/Notice';
 import Container from '@/components/Container';
-import { isDateExpired } from '@/utils/dates';
+import Options from '@/components/Options';
 
 function PollPage() {
   const router = useRouter();
@@ -22,17 +23,7 @@ function PollPage() {
         <article className='p-4 border mt-6 rounded-md'>
           <h1 className='text-2xl font-medium text-center'>{foundPoll.title}</h1>
         </article>
-        <ul className='flex flex-col gap-2'>
-          {foundPoll.options.map(option => (
-            <li
-              className='flex flex-row justify-between p-2 border rounded-md hover:scale-95 transition-all cursor-pointer'
-              key={option.id}
-            >
-              <h2>{option.name}</h2>
-              <h3>14</h3>
-            </li>
-          ))}
-        </ul>
+        <Options poll={foundPoll} />
         <span className='text-blue-500 underline'>http://localhost:3000/polls/{foundPoll.id}</span>
         <div className='bg-blue-100 p-1 border rounded select-none'>This poll will expire in 5 minutes</div>
       </Container>
