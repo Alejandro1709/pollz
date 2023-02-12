@@ -2,7 +2,7 @@ import type IPoll from '@/types/poll';
 
 const polls: Array<IPoll> = [
   {
-    id: '1',
+    id: 'alfanumericbeach45',
     title: 'What is your favorite color?',
     options: [
       { id: 1, name: 'Red', votes: 0 },
