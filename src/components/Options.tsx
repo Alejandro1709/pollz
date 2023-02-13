@@ -9,7 +9,7 @@ function Options({ poll }: OptionsProps) {
   return (
     <ul className='flex flex-col gap-2'>
       {poll.options.map(option => (
-        <Option key={option.id} option={option} />
+        <Option key={option.id} option={option} poll={poll} />
       ))}
     </ul>
   );

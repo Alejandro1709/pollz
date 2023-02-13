@@ -10,11 +10,12 @@ export default interface IPoll {
 
 export interface IPollOption {
   id: number;
-  name: string;
+  title: string;
   votes: number;
 }
 
 export interface IPollVote {
   id: number;
   optionId: number;
+  option: IPollOption;
 }

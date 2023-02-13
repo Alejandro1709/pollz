@@ -16,6 +16,7 @@ model Poll {
   slug      String   @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  expiresAt DateTime @default(now())
   options   Option[]
   votes     Vote[]
 }
