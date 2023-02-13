@@ -28,7 +28,7 @@ function PollPage({ poll }: PollPageProps) {
         ) : (
           <Notice title='Poll' message='No options were found' />
         )}
-        <span className='text-blue-500 underline'>http://localhost:3000/polls/{foundPoll.id}</span>
+        <span className='text-blue-500 underline'>https://pollz-mu.vercel.app/{foundPoll.id}</span>
         <div className='bg-blue-100 p-1 border rounded select-none'>
           This poll will expire in {foundPoll.expiresAt.toLocaleString()}
         </div>
